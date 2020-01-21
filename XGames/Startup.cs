@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using XGames.Data;
 using Microsoft.EntityFrameworkCore;
+using XGames.Hubs;
 namespace XGames
 {
     public class Startup
@@ -27,6 +28,7 @@ namespace XGames
             services.AddControllersWithViews();
             services.AddDbContext<XGamesContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("XGamesContext")));
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +56,7 @@ namespace XGames
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapHub<ChatHub>("/chatHub");
             });
         }
     }

@@ -26,17 +26,34 @@ namespace XGames.Controllers
      //   }
 
         // GET: Games
-        public async Task<IActionResult> Index(String SearchString)
+        public async Task<IActionResult> Index(String SearchString, string GameGenre)
         {
 
-            var query = from g in _context.Game
-                        select g;
+            // Use LINQ to get list of genres.
+            IQueryable<string> genreQuery = from m in _context.Game
+                                            orderby m.Genre
+                                            select m.Genre;
 
-            if (!String.IsNullOrEmpty(SearchString)) {
-                query=query.Where(item=>item.Title.Contains(SearchString));
+            var movies = from m in _context.Game
+                         select m;
+
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                movies = movies.Where(s => s.Title.Contains(SearchString));
             }
 
-            return View(await query.ToArrayAsync());
+            if (!string.IsNullOrEmpty(GameGenre))
+            {
+                movies = movies.Where(x => x.Genre == GameGenre);
+            }
+
+            var GameGenreVM = new GameGenreViewModel
+            {
+                Genres = new SelectList(await genreQuery.Distinct().ToListAsync()),
+                Games = await movies.ToListAsync()
+            };
+
+            return View(GameGenreVM);
         }
 
         // GET: Games/Details/5
@@ -68,7 +85,7 @@ namespace XGames.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Title,ReleaseDate,Genre,Price,Picture")] Game game)
+        public async Task<IActionResult> Create([Bind("ID,Title,ReleaseDate,Genre,Price,Picture,Rating")] Game game)
         {
             if (ModelState.IsValid)
             {
