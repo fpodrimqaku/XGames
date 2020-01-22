@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\faton.podrimcaku\\source\\repos\\XGames\\XGames\\XGames.csproj": {}
+    "C:\\Users\\faton.podrimcaku\\Desktop\\coreexe\\XGames\\XGames\\XGames.csproj": {}
   },
   "projects": {
-    "C:\\Users\\faton.podrimcaku\\source\\repos\\XGames\\XGames\\XGames.csproj": {
+    "C:\\Users\\faton.podrimcaku\\Desktop\\coreexe\\XGames\\XGames\\XGames.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\faton.podrimcaku\\source\\repos\\XGames\\XGames\\XGames.csproj",
+        "projectUniqueName": "C:\\Users\\faton.podrimcaku\\Desktop\\coreexe\\XGames\\XGames\\XGames.csproj",
         "projectName": "XGames",
-        "projectPath": "C:\\Users\\faton.podrimcaku\\source\\repos\\XGames\\XGames\\XGames.csproj",
+        "projectPath": "C:\\Users\\faton.podrimcaku\\Desktop\\coreexe\\XGames\\XGames\\XGames.csproj",
         "packagesPath": "C:\\Users\\faton.podrimcaku\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\faton.podrimcaku\\source\\repos\\XGames\\XGames\\obj\\",
+        "outputPath": "C:\\Users\\faton.podrimcaku\\Desktop\\coreexe\\XGames\\XGames\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
