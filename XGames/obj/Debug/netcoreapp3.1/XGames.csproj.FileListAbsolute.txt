@@ -164,11 +164,18 @@ C:\Users\faton.podrimcaku\source\repos\XGames\XGames\obj\Debug\netcoreapp3.1\XGa
 C:\Users\faton.podrimcaku\source\repos\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.csproj.CopyComplete
 C:\Users\faton.podrimcaku\source\repos\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.dll
 C:\Users\faton.podrimcaku\source\repos\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.pdb
+C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\staticwebassets\XGames.StaticWebAssets.Manifest.cache
+C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\staticwebassets\XGames.StaticWebAssets.xml
+C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.RazorAssemblyInfo.cache
+C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.RazorAssemblyInfo.cs
+C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.AssemblyInfoInputs.cache
+C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.AssemblyInfo.cs
 C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\bin\Debug\netcoreapp3.1\libman.json
 C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\bin\Debug\netcoreapp3.1\package-lock.json
+C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\bin\Debug\netcoreapp3.1\XGames.exe
 C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\bin\Debug\netcoreapp3.1\XGames.deps.json
 C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\bin\Debug\netcoreapp3.1\XGames.runtimeconfig.json
@@ -301,14 +308,6 @@ C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\bin\Debug\netcoreapp3.1\
 C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.csprojAssemblyReference.cache
-C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\staticwebassets\XGames.StaticWebAssets.Manifest.cache
-C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\staticwebassets\XGames.StaticWebAssets.xml
-C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.RazorAssemblyInfo.cache
-C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.RazorAssemblyInfo.cs
-C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.AssemblyInfoInputs.cache
-C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.AssemblyInfo.cs
 C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.TagHelpers.input.cache
 C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.TagHelpers.output.cache
 C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.RazorCoreGenerate.cache
@@ -320,6 +319,7 @@ C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\
 C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\Razor\Views\Games\Index.cshtml.g.cs
 C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\Razor\Views\Settings\Index.cshtml.g.cs
 C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -331,3 +331,4 @@ C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\
 C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.csproj.CopyComplete
 C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.dll
 C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.pdb
+C:\Users\faton.podrimcaku\Desktop\coreexe\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.csprojAssemblyReference.cache

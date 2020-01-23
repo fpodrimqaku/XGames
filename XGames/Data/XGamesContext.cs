@@ -15,5 +15,9 @@ namespace XGames.Data
         }
 
         public DbSet<XGames.Models.Game> Game { get; set; }
+        public DbSet<XGames.Models.GamePicture> GamePicture { get; set; }
+        public DbSet<XGames.Models.Cart> Cart { get; set; }
+        public DbSet<XGames.Models.LineItem> LineItem { get; set; }
+        
     }
 }

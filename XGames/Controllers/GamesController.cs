@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using XGames.Data;
 using XGames.Models;
+using XGames.Services.Time;
 
 namespace XGames.Controllers
 {
@@ -14,9 +15,12 @@ namespace XGames.Controllers
     {
         private readonly XGamesContext _context;
 
-        public GamesController(XGamesContext context)
+        //private readonly IDateTime _dateTime;
+        public GamesController(/*IDateTime datetime,*/ XGamesContext context )
         {
+          //  _dateTime = datetime;
             _context = context;
+            
         }
 
      //[HttpPost]
@@ -26,9 +30,9 @@ namespace XGames.Controllers
      //   }
 
         // GET: Games
-        public async Task<IActionResult> Index(String SearchString, string GameGenre)
+        public async Task<IActionResult> Index(String SearchString, string GameGenre,[FromServices] IDateTime _dateTime)
         {
-
+            ViewData["Message"] = String.Format("hELLO USER TIME IS {0} ", _dateTime.Now.ToString("hh:mm:ss"));
             // Use LINQ to get list of genres.
             IQueryable<string> genreQuery = from m in _context.Game
                                             orderby m.Genre
@@ -54,6 +58,10 @@ namespace XGames.Controllers
             };
 
             return View(GameGenreVM);
+        }
+
+        public JsonResult CurrentDate([FromServices] IDateTime _dateTime) {
+            return Json(new { time = _dateTime });
         }
 
         // GET: Games/Details/5

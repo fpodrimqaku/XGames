@@ -1,0 +1,21 @@
+﻿@using Microsoft.Extensions.Configuration
+@using XGames.Data
+
+@inject XGamesContext context
+@{
+    ViewData["Title"] = "Index";
+   
+}
+
+<h1>Index</h1>
+
+
+
+@{
+    IQueryable<string> genreQuery = from m in context.Game
+                                    orderby m.Genre
+                                    select m.Genre;
+    foreach (var el in genreQuery)
+    {
+    <h1> the text -> @el</h1>}
+}
