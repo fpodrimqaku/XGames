@@ -17,67 +17,28 @@ namespace XGames.Repositories
         }
 
 
+        public XGamesContext getDatabaseContext() { return _context; }
 
 
+        public DbSet<T> GetAllAsSet() {
 
-
-        public async Task<IActionResult> Index(String SearchString, string GameGenre)
-        {
-          
-            IQueryable<string> genreQuery = from m in _context.Game
-                                            orderby m.Genre
-                                            select m.Genre;
-
-            var movies = from m in _context.Game
-                         select m;
-
-            if (!string.IsNullOrEmpty(SearchString))
-            {
-                movies = movies.Where(s => s.Title.Contains(SearchString));
-            }
-
-            if (!string.IsNullOrEmpty(GameGenre))
-            {
-                movies = movies.Where(x => x.Genre == GameGenre);
-            }
-
-            var GameGenreVM = new GameGenreViewModel
-            {
-                Genres = new SelectList(await genreQuery.Distinct().ToListAsync()),
-                Games = await movies.ToListAsync()
-            };
-
-            return View(GameGenreVM);
+            return _context.Set<T>();
         }
 
-        public JsonResult CurrentDate([FromServices] IDateTime _dateTime)
+        
+        public async Task<T> GetById(int id)
         {
-            return Json(new { time = _dateTime });
-        }
 
-        // GET: Games/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
+            var entity = await _context.FindAsync<T>(new { ID = id });
+
+            if (entity == null)
             {
-                return NotFound();
+                throw new KeyNotFoundException();
             }
 
-            var game = await _context.Game
-                .FirstOrDefaultAsync(m => m.ID == id);
-            if (game == null)
-            {
-                return NotFound();
-            }
-
-            return View(game);
+            return entity;
         }
 
-        // GET: Games/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
 
     
         public async Task<T> Create( T entity)
@@ -88,23 +49,6 @@ namespace XGames.Repositories
             }
           
         
-
-        //// GET: Games/Edit/5
-        //public async Task<IActionResult> Edit(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    var game = await _context.Game.FindAsync(id);
-        //    if (game == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return View(game);
-        //}
-
        
         public async Task<T> Update(int id,T entity) 
         {
@@ -140,7 +84,7 @@ namespace XGames.Repositories
 
      
       
-        public async Task<bool> DeleteConfirmed(int id)
+        public async Task<bool> Delete(int id)
         {
             var entity = await _context.FindAsync<T>(id);
             _context.Remove<T>(entity);
