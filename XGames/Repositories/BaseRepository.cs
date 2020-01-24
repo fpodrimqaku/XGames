@@ -87,7 +87,7 @@ namespace XGames.Repositories
 
      
       
-        public async Task<T> Delete(int id)
+        public async Task<bool> Delete(int id)
         {
             
             try
@@ -95,10 +95,10 @@ namespace XGames.Repositories
                 var entity = await _context.FindAsync<T>(id);
                 _context.Remove<T>(entity);
                 await _context.SaveChangesAsync();
-                return entity;
+                return true;
             }
             //--exception suppressed and value returned as false
-            catch (Exception exe) { return null; }
+            catch (Exception exe) { return false; }
           
         }
 

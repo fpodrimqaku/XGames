@@ -79,7 +79,7 @@ namespace XGames.BusinessLogic
 
 
 
-       public async Task<T> Delete(int id)
+       public async Task<bool> Delete(int id)
        {
             if (id < 1) {
                 throw new ArgumentException("Id of object to be deleted ranged below 1. Values Allowed are =>1");
