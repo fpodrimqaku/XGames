@@ -8,10 +8,9 @@ using XGames.Models;
 
 namespace XGames.Repositories
 {
-    public class LineItemRepository : BaseRepository<LineItem>
+    public class GamePictureRepository : BaseRepository<GamePicture>
     {
-
-        public LineItemRepository([FromServices]XGamesContext context) : base(context)
+        public GamePictureRepository([FromServices]XGamesContext context) : base(context)
         {
 
         }

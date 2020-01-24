@@ -10,7 +10,7 @@ namespace XGames.Repositories
 {
     public class CartRepository : BaseRepository<Cart>
     {
-        public CartRepository([FromServices]XGamesContext context) : base(context) {
+        public CartRepository([FromServices]XGamesContext context) :base(context) {
           
         }
 
