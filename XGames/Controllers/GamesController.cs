@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using XGames.BusinessLogic;
 using XGames.Data;
 using XGames.Models;
 using XGames.Services.Time;
@@ -14,47 +15,39 @@ namespace XGames.Controllers
     public class GamesController : Controller
     {
         private readonly XGamesContext _context;
-
+        GameBLL gamesBLL;
         //private readonly IDateTime _dateTime;
         public GamesController(/*IDateTime datetime,*/ XGamesContext context )
         {
           //  _dateTime = datetime;
             _context = context;
-            
+            gamesBLL = new GameBLL(context);
         }
 
-     //[HttpPost]
-     //   public string Index(string searchString,bool notUsed)
-     //   {
-     //       return "From [HttpPost]Index: filter on " + searchString;
-     //   }
 
         // GET: Games
         public async Task<IActionResult> Index(String SearchString, string GameGenre,[FromServices] IDateTime _dateTime)
         {
             ViewData["Message"] = String.Format("hELLO USER TIME IS {0} ", _dateTime.Now.ToString("hh:mm:ss"));
             // Use LINQ to get list of genres.
-            IQueryable<string> genreQuery = from m in _context.Game
-                                            orderby m.Genre
-                                            select m.Genre;
 
-            var movies = from m in _context.Game
-                         select m;
 
+            var movies = gamesBLL.GetAll();
+            var Genres = new SelectList(movies.Select(item => item.Genre).Distinct().ToList());
             if (!string.IsNullOrEmpty(SearchString))
             {
-                movies = movies.Where(s => s.Title.Contains(SearchString));
+                movies = movies.Where(s => s.Title.ToLower().Contains(SearchString.ToLower())).ToList();
             }
 
             if (!string.IsNullOrEmpty(GameGenre))
             {
-                movies = movies.Where(x => x.Genre == GameGenre);
+                movies = movies.Where(x => x.Genre == GameGenre).ToList();
             }
 
             var GameGenreVM = new GameGenreViewModel
             {
-                Genres = new SelectList(await genreQuery.Distinct().ToListAsync()),
-                Games = await movies.ToListAsync()
+                Genres = Genres,
+                Games =  movies.ToList()
             };
 
             return View(GameGenreVM);
@@ -65,15 +58,14 @@ namespace XGames.Controllers
         }
 
         // GET: Games/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int id)
         {
-            if (id == null)
+            if (id <0)
             {
                 return NotFound();
             }
 
-            var game = await _context.Game
-                .FirstOrDefaultAsync(m => m.ID == id);
+            var game = await gamesBLL.GetById(id );
             if (game == null)
             {
                 return NotFound();
@@ -95,24 +87,24 @@ namespace XGames.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ID,Title,ReleaseDate,Genre,Price,Picture,Rating")] Game game)
         {
+            Game gameCreated=null;
             if (ModelState.IsValid)
             {
-                _context.Add(game);
-                await _context.SaveChangesAsync();
+               gameCreated= await gamesBLL.Create(game);
                 return RedirectToAction(nameof(Index));
             }
-            return View(game);
+            return View(gameCreated);
         }
 
         // GET: Games/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int id)
         {
-            if (id == null)
+            if (id <0)
             {
                 return NotFound();
             }
 
-            var game = await _context.Game.FindAsync(id);
+            var game = await gamesBLL.GetById(id);
             if (game == null)
             {
                 return NotFound();
@@ -131,40 +123,32 @@ namespace XGames.Controllers
             {
                 return NotFound();
             }
-
+            Game gameUpdated=null;
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _context.Update(game);
-                    await _context.SaveChangesAsync();
+                    gameUpdated= await gamesBLL.Update(id,game);
+               
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!GameExists(game.ID))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                catch (Exception exe)
+                {//-- not handled properly
+                    throw exe;
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(game);
+            return View(gameUpdated ?? game);
         }
 
         // GET: Games/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int id)
         {
-            if (id == null)
+            if (id < 0)
             {
                 return NotFound();
             }
 
-            var game = await _context.Game
-                .FirstOrDefaultAsync(m => m.ID == id);
+            var game = await gamesBLL.GetById(id);
             if (game == null)
             {
                 return NotFound();
@@ -178,17 +162,10 @@ namespace XGames.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var game = await _context.Game.FindAsync(id);
-            _context.Game.Remove(game);
-            await _context.SaveChangesAsync();
+            var game = await gamesBLL.GetById(id);
+            gamesBLL.Delete(id);
             return RedirectToAction(nameof(Index));
         }
 
-        private bool GameExists(int id)
-        {
-            return _context.Game.Any(e => e.ID == id);
-
-            
-        }
     }
 }

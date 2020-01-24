@@ -8516,19 +8516,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\blu3s\\.nuget\\packages\\": {}
+    "C:\\Users\\faton.podrimcaku\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\blu3s\\Desktop\\XGames\\XGames\\XGames\\XGames.csproj",
+      "projectUniqueName": "C:\\Users\\faton.podrimcaku\\Desktop\\coreexe\\XGames\\XGames\\XGames.csproj",
       "projectName": "XGames",
-      "projectPath": "C:\\Users\\blu3s\\Desktop\\XGames\\XGames\\XGames\\XGames.csproj",
-      "packagesPath": "C:\\Users\\blu3s\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\blu3s\\Desktop\\XGames\\XGames\\XGames\\obj\\",
+      "projectPath": "C:\\Users\\faton.podrimcaku\\Desktop\\coreexe\\XGames\\XGames\\XGames.csproj",
+      "packagesPath": "C:\\Users\\faton.podrimcaku\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\faton.podrimcaku\\Desktop\\coreexe\\XGames\\XGames\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\blu3s\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\faton.podrimcaku\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

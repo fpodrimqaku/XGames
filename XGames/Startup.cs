@@ -34,8 +34,7 @@ namespace XGames
             services.AddDbContext<XGamesContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("XGamesContext")));
             services.AddSignalR();
-          
-            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

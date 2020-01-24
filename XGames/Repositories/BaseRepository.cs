@@ -13,12 +13,12 @@ namespace XGames.Repositories
     {
        private readonly XGamesContext _context;
 
-            public BaseRepository(XGamesContext context) {
+            public BaseRepository([FromServices]XGamesContext context) {
             this._context = context;
         }
 
 
-        public XGamesContext getDatabaseContext() { return _context; }
+        protected XGamesContext getDatabaseContext() { return _context; }
 
 
         public DbSet<T> GetAllAsSet() {
@@ -30,7 +30,7 @@ namespace XGames.Repositories
         public async Task<T> GetById(int id)
         {
 
-            var entity = await _context.FindAsync<T>(new { ID = id });
+            var entity = await _context.FindAsync<T>(  id );
 
             if (entity == null)
             {
@@ -53,6 +53,7 @@ namespace XGames.Repositories
        
         public async Task<T> Update(int id,T entity) 
         {
+            T entityToReturn;
             if (id != entity.ID)
             {
                 throw new KeyNotFoundException();
@@ -62,8 +63,9 @@ namespace XGames.Repositories
             {
                 try
                 {
-                    _context.Update<T>(entity);
-                    await _context.SaveChangesAsync();
+                     _context.Update<T>(entity);
+                     await _context.SaveChangesAsync();
+                    entityToReturn = await GetById(id);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -76,7 +78,7 @@ namespace XGames.Repositories
                         throw;
                     }
                 }
-                return entity;
+                return entityToReturn;
             }
             else {
                 throw new NullReferenceException();
@@ -85,27 +87,25 @@ namespace XGames.Repositories
 
      
       
-        public async Task<bool> Delete(int id)
+        public async Task<T> Delete(int id)
         {
-            var entity = await _context.FindAsync<T>(id);
-            _context.Remove<T>(entity);
-            await _context.SaveChangesAsync();
-            return true;
+            
+            try
+            {
+                var entity = await _context.FindAsync<T>(id);
+                _context.Remove<T>(entity);
+                await _context.SaveChangesAsync();
+                return entity;
+            }
+            //--exception suppressed and value returned as false
+            catch (Exception exe) { return null; }
+          
         }
 
-        private bool EntityExists(int id)
+        public bool EntityExists(int id)
         {
-            return _context.Find<T>(new { ID=id }) !=null;
+            return _context.Find<T>( id ) !=null;
         }
-
-
-
-
-
-
-
-
-
 
 
     }
