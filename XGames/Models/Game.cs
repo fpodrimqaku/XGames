@@ -7,7 +7,7 @@ namespace XGames.Models
 {
     public class Game : BaseModel
     {
-        public int ID { get; set; }
+      
 
         [StringLength(80, MinimumLength = 3), Required]
         public string Title { get; set; }

@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <Folder Include="BusinessLogic\" />
+    <Folder Include="Exceptions\" />
   </ItemGroup>
 
 

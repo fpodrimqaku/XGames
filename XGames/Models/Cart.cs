@@ -8,8 +8,7 @@ namespace XGames.Models
 {
     public class Cart :BaseModel
     {
-        public int ID {get;set;}
-
+       
         public bool checkedOut { get; set; }
         [Column(TypeName = "money")]
         public decimal total { get; set; }

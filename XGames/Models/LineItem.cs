@@ -7,7 +7,7 @@ namespace XGames.Models
 {
     public class LineItem : BaseModel
     {
-        public int ID { get; set; }
+        
         public int quantity { get; set; }
 
         public int GameId { get; set; }
