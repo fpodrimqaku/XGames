@@ -1,17 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using XGames.Data;
 using XGames.Models;
 
-namespace XGames.Repositories.RepositoryInterfaces
+namespace XGames.BusinessLogic.BusinessLogicInterfaces
 {
-   public interface IBaseRepository<T> where T : BaseModel
+   public  interface IBaseBLL<T> where T : BaseModel
     {
 
-        public DbSet<T> GetAllAsSet();
+        public List<T> GetAll();
 
 
         public  Task<T> GetById(int id);
@@ -19,14 +17,14 @@ namespace XGames.Repositories.RepositoryInterfaces
 
         public  Task<T> Create(T entity);
 
-
         public  Task<T> Update(int id, T entity);
 
 
-
         public  Task<bool> Delete(int id);
+        
 
         public bool EntityExists(int id);
+
 
     }
 }

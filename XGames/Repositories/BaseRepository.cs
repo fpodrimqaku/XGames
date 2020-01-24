@@ -6,15 +6,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using XGames.Data;
 using XGames.Models;
+using XGames.Repositories.RepositoryInterfaces;
 
 namespace XGames.Repositories
 {
-    public class BaseRepository<T> where T:BaseModel
+    public class BaseRepository<T>: IBaseRepository<T> where T:BaseModel
     {
        private readonly XGamesContext _context;
 
             public BaseRepository([FromServices]XGamesContext context) {
-            this._context = context;
+            _context = context;
         }
 
 

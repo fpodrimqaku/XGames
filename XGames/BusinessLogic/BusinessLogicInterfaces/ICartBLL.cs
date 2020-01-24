@@ -4,10 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using XGames.Models;
 
-namespace XGames.Repositories.RepositoryInterfaces
+namespace XGames.BusinessLogic.BusinessLogicInterfaces
 {
-    public interface IGamePictureRepository:IBaseRepository<GamePicture>
+   public interface ICartBLL:IBaseBLL<Cart>
     {
-
     }
 }

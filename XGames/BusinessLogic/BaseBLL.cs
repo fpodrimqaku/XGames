@@ -4,19 +4,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using XGames.BusinessLogic.BusinessLogicInterfaces;
 using XGames.Data;
 using XGames.Models;
 using XGames.Repositories;
 
 namespace XGames.BusinessLogic
 {
-    public class BaseBLL<T> where T: BaseModel
+    public class BaseBLL<T> : IBaseBLL<T> where T: BaseModel
     {
-
+        
         private readonly BaseRepository<T> BaseRepository;
 
-        public BaseBLL([FromServices]XGamesContext xGamesContext) {
-            this.BaseRepository = new BaseRepository<T>(xGamesContext);
+        public BaseBLL([FromServices]BaseRepository<T> _baseRepository) {
+            this.BaseRepository = _baseRepository;
         }
 
         public List<T> GetAll()

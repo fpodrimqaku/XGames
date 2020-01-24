@@ -13,6 +13,10 @@ using Microsoft.EntityFrameworkCore;
 using XGames.Hubs;
 using XGames.Services.Time;
 using XGames.Configuration;
+using XGames.Repositories.RepositoryInterfaces;
+using XGames.Repositories;
+using XGames.BusinessLogic.BusinessLogicInterfaces;
+using XGames.BusinessLogic;
 
 namespace XGames
 {
@@ -29,7 +33,9 @@ namespace XGames
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IDateTime, SystemDateTime>();
-            
+            services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+            services.AddScoped(typeof(IBaseBLL<>), typeof(BaseBLL<>));
+
             services.AddControllersWithViews();
             services.AddDbContext<XGamesContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("XGamesContext")));

@@ -14,14 +14,13 @@ namespace XGames.Controllers
 {
     public class GamesController : Controller
     {
-        private readonly XGamesContext _context;
+        
         GameBLL gamesBLL;
         //private readonly IDateTime _dateTime;
-        public GamesController(/*IDateTime datetime,*/ XGamesContext context )
+        public GamesController( [FromServices]GameBLL gameBLL)
         {
-          //  _dateTime = datetime;
-            _context = context;
-            gamesBLL = new GameBLL(context);
+            gamesBLL = gameBLL;
+            
         }
 
 
