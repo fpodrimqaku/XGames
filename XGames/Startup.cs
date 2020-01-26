@@ -12,10 +12,10 @@ using XGames.Data;
 using Microsoft.EntityFrameworkCore;
 using XGames.Hubs;
 using XGames.Services.Time;
-using XGames.Configuration;
+using XGames.Repositories.RepositoryInterfaces;
+using XGames.BusinessLogic.BusinessLogicInterfaces;
 using XGames.Repositories.RepositoryInterfaces;
 using XGames.Repositories;
-using XGames.BusinessLogic.BusinessLogicInterfaces;
 using XGames.BusinessLogic;
 
 namespace XGames
@@ -33,13 +33,27 @@ namespace XGames
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IDateTime, SystemDateTime>();
-            services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
-            services.AddScoped(typeof(IBaseBLL<>), typeof(BaseBLL<>));
-
             services.AddControllersWithViews();
             services.AddDbContext<XGamesContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("XGamesContext")));
+                    options.UseSqlServer(Configuration.GetConnectionString("localDbString")));
             services.AddSignalR();
+
+
+
+             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+            services.AddScoped(typeof(ICartRepository), typeof(CartRepository));
+            services.AddScoped(typeof(IGameRepository), typeof(GameRepository));
+             services.AddScoped(typeof(IGamePictureRepository), typeof(GamePictureRepository));
+             services.AddScoped(typeof(ILineItemRepository), typeof(LineItemRepository));
+
+
+             services.AddScoped(typeof(IBaseBLL<>), typeof(BaseBLL<>));
+            services.AddScoped(typeof(ICartBLL), typeof(CartBLL));
+            services.AddScoped(typeof(IGameBLL), typeof(GameBLL));
+             services.AddScoped(typeof(IGamePictureBLL), typeof(GamePictureBLL));
+             services.AddScoped(typeof(ILineItemBLL), typeof(LineItemBLL));
+
+            
 
         }
 

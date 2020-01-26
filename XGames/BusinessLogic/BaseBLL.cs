@@ -8,15 +8,16 @@ using XGames.BusinessLogic.BusinessLogicInterfaces;
 using XGames.Data;
 using XGames.Models;
 using XGames.Repositories;
+using XGames.Repositories.RepositoryInterfaces;
 
 namespace XGames.BusinessLogic
 {
     public class BaseBLL<T> : IBaseBLL<T> where T: BaseModel
     {
         
-        private readonly BaseRepository<T> BaseRepository;
+        private readonly IBaseRepository<T> BaseRepository;
 
-        public BaseBLL([FromServices]BaseRepository<T> _baseRepository) {
+        public BaseBLL([FromServices]IBaseRepository<T> _baseRepository) {
             this.BaseRepository = _baseRepository;
         }
 

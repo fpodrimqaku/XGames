@@ -1,9 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\faton.podrimcaku\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\faton.podrimcaku\\.nuget\\packages",
-      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      "C:\\Users\\blu3s\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\blu3s\\.nuget\\packages"
     ]
   }
 }

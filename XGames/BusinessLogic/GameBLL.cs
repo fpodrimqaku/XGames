@@ -7,11 +7,12 @@ using XGames.BusinessLogic.BusinessLogicInterfaces;
 using XGames.Data;
 using XGames.Models;
 using XGames.Repositories;
+using XGames.Repositories.RepositoryInterfaces;
 
 namespace XGames.BusinessLogic
 {
     public class GameBLL : BaseBLL<Game> ,IGameBLL
     {
-        public GameBLL([FromServices]GameRepository gameRepo) :base(gameRepo) { }
+        public GameBLL([FromServices]IGameRepository gameRepo) :base(gameRepo) { }
     }
 }

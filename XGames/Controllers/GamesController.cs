@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using XGames.BusinessLogic;
+using XGames.BusinessLogic.BusinessLogicInterfaces;
 using XGames.Data;
 using XGames.Models;
 using XGames.Services.Time;
@@ -15,9 +16,9 @@ namespace XGames.Controllers
     public class GamesController : Controller
     {
         
-        GameBLL gamesBLL;
+        IGameBLL gamesBLL;
         //private readonly IDateTime _dateTime;
-        public GamesController( [FromServices]GameBLL gameBLL)
+        public GamesController( [FromServices]IGameBLL gameBLL)
         {
             gamesBLL = gameBLL;
             

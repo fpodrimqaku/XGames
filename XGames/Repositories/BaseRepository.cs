@@ -14,7 +14,7 @@ namespace XGames.Repositories
     {
        private readonly XGamesContext _context;
 
-            public BaseRepository([FromServices]XGamesContext context) {
+            public BaseRepository(XGamesContext context) {
             _context = context;
         }
 

@@ -7,12 +7,13 @@ using XGames.BusinessLogic.BusinessLogicInterfaces;
 using XGames.Data;
 using XGames.Models;
 using XGames.Repositories;
+using XGames.Repositories.RepositoryInterfaces;
 
 namespace XGames.BusinessLogic
 {
     public class GamePictureBLL:BaseBLL<GamePicture>,IGamePictureBLL
     {
-        public GamePictureBLL([FromServices]GamePictureRepository GamePictureRepo) : base(GamePictureRepo) { }
+        public GamePictureBLL([FromServices]IGamePictureRepository GamePictureRepo) : base(GamePictureRepo) { }
 
     }
 }

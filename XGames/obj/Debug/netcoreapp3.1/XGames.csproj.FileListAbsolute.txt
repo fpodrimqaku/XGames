@@ -499,3 +499,4 @@ C:\Users\blu3s\Desktop\XGames\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.Views
 C:\Users\blu3s\Desktop\XGames\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.csproj.CopyComplete
 C:\Users\blu3s\Desktop\XGames\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.dll
 C:\Users\blu3s\Desktop\XGames\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.pdb
+C:\Users\blu3s\Desktop\XGames\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.csprojAssemblyReference.cache
