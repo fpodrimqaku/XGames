@@ -471,7 +471,6 @@ C:\Users\blu3s\Desktop\XGames\XGames\XGames\bin\Debug\netcoreapp3.1\runtimes\win
 C:\Users\blu3s\Desktop\XGames\XGames\XGames\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\blu3s\Desktop\XGames\XGames\XGames\obj\Debug\netcoreapp3.1\staticwebassets\XGames.StaticWebAssets.Manifest.cache
 C:\Users\blu3s\Desktop\XGames\XGames\XGames\obj\Debug\netcoreapp3.1\staticwebassets\XGames.StaticWebAssets.xml
-C:\Users\blu3s\Desktop\XGames\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\blu3s\Desktop\XGames\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.RazorAssemblyInfo.cache
 C:\Users\blu3s\Desktop\XGames\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.RazorAssemblyInfo.cs
 C:\Users\blu3s\Desktop\XGames\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.AssemblyInfoInputs.cache
@@ -500,3 +499,16 @@ C:\Users\blu3s\Desktop\XGames\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.cspro
 C:\Users\blu3s\Desktop\XGames\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.dll
 C:\Users\blu3s\Desktop\XGames\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.pdb
 C:\Users\blu3s\Desktop\XGames\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.csprojAssemblyReference.cache
+C:\Users\blu3s\Desktop\XGames\XGames\XGames\bin\Debug\netcoreapp3.1\vue-part\package.json
+C:\Users\blu3s\Desktop\XGames\XGames\XGames\bin\Debug\netcoreapp3.1\vue-part\package-lock.json
+C:\Users\blu3s\Desktop\XGames\XGames\XGames\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.NodeServices.dll
+C:\Users\blu3s\Desktop\XGames\XGames\XGames\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.SpaServices.dll
+C:\Users\blu3s\Desktop\XGames\XGames\XGames\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.SpaServices.Extensions.dll
+C:\Users\blu3s\Desktop\XGames\XGames\XGames\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\blu3s\Desktop\XGames\XGames\XGames\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\blu3s\Desktop\XGames\XGames\XGames\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\blu3s\Desktop\XGames\XGames\XGames\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Configuration.dll
+C:\Users\blu3s\Desktop\XGames\XGames\XGames\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Console.dll
+C:\Users\blu3s\Desktop\XGames\XGames\XGames\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+C:\Users\blu3s\Desktop\XGames\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\blu3s\Desktop\XGames\XGames\XGames\obj\Debug\netcoreapp3.1\XGames.MvcApplicationPartsAssemblyInfo.cache

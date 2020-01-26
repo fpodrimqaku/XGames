@@ -17,7 +17,7 @@ using XGames.BusinessLogic.BusinessLogicInterfaces;
 using XGames.Repositories.RepositoryInterfaces;
 using XGames.Repositories;
 using XGames.BusinessLogic;
-
+using XGames.Configuration;
 namespace XGames
 {
     public class Startup
@@ -53,7 +53,7 @@ namespace XGames
              services.AddScoped(typeof(IGamePictureBLL), typeof(GamePictureBLL));
              services.AddScoped(typeof(ILineItemBLL), typeof(LineItemBLL));
 
-            
+            services.AddSpaStaticFiles(options => options.RootPath = "vue-part/dist");
 
         }
 
@@ -84,6 +84,18 @@ namespace XGames
                     pattern: "{controller=Games}/{action=Index}/{id?}");
                 endpoints.MapHub<ChatHub>("/chatHub");
             });
+
+            app.UseSpaStaticFiles();
+            app.UseSpa(spa =>
+            {
+                spa.Options.SourcePath = "vue-part";
+                if (env.IsDevelopment())
+                {
+
+                    spa.UseVueDevelopmentServer();
+                }
+            });
+
         }
     }
 }
