@@ -95,7 +95,7 @@ namespace XGames.Repositories
             {
                 var entity = await _context.FindAsync<T>(id);
                 _context.Remove<T>(entity);
-                await _context.SaveChangesAsync();
+                _context.SaveChangesAsync();
                 return true;
             }
             //--exception suppressed and value returned as false
